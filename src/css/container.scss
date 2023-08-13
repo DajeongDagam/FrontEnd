@@ -3,8 +3,14 @@
   max-width: 400px;
   margin: 0 auto;
   min-height: 100vh;
+
   //화면 영역 확인을 위한 배경색
   background-color: antiquewhite;
+  display: flex;
+  flex-direction: column;
+
+  //개행문자 인식
+  white-space: pre-line;
 }
 
 .top-bar-container {
