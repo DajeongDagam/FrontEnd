@@ -6,3 +6,14 @@
   //화면 영역 확인을 위한 배경색
   background-color: antiquewhite;
 }
+
+.top-bar-container {
+  padding: 3% 5% 3% 5%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.drawbar-btn {
+  width: 60px;
+}
