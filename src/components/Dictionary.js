@@ -1,8 +1,13 @@
 import React from "react";
 import DictionaryItem from "./DictionaryItem";
+import { useSearchParams } from "react-router-dom";
+import DictionaryItemDetail from "./DictionaryItemDetail";
 
 const Dictionary = ({ dict }) => {
-  return (
+  const [searchParams] = useSearchParams();
+  const query = searchParams.get("keyword");
+
+  return query === null ? (
     <div>
       {dict.map((word) => (
         <DictionaryItem
@@ -15,6 +20,8 @@ const Dictionary = ({ dict }) => {
         />
       ))}
     </div>
+  ) : (
+    <DictionaryItemDetail dict={dict} keyword={query} />
   );
 };
 

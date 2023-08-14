@@ -21,6 +21,10 @@
     border-color: #909090;
     border-width: 1px;
     padding-left: 10px;
+
+    &:focus {
+        outline: none;
+    }
 }
 
 .drawer {
@@ -44,4 +48,8 @@
         margin-left: 5px;
         cursor: pointer;
     }
+}
+
+.hideCategory {
+    display: none;
 }

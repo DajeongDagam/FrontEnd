@@ -1,8 +1,15 @@
 import React from "react";
 import Nav from "../components/DictTopSearchNav";
 import Dictionary from "../components/Dictionary";
+import { useLocation, useSearchParams } from "react-router-dom";
+import DictionaryItemEdit from "../components/DictionaryItemEdit";
 
 const DictionaryPage = () => {
+  const location = useLocation();
+
+  const [searchParams] = useSearchParams();
+  const keyword = searchParams.get("keyword");
+
   const dict = [
     {
       id: 1,
@@ -10,6 +17,7 @@ const DictionaryPage = () => {
       description:
         "주로 다른 사람의 말을 비아냥거릴 때 많이 쓰이는 신조어.'어쩌라고'와 '티비(텔레비전)'을 합친 합성어. 2021년 하반기경에 유명세를 탄 신조어다. 기원은 불분명하나, 여러 커뮤니티에서 다방면으로 쓰이고 있다.",
       author: "유빈",
+      participants: 10,
       date: "2023-02-29",
       like: 3,
     },
@@ -19,6 +27,7 @@ const DictionaryPage = () => {
       description:
         "주로 다른 사람의 말을 비아냥거릴 때 많이 쓰이는 신조어.'어쩌라고'와 '티비(텔레비전)'을 합친 합성어. 2021년 하반기경에 유명세를 탄 신조어다. 기원은 불분명하나, 여러 커뮤니티에서 다방면으로 쓰이고 있다.",
       author: "유민",
+      participants: 8,
       date: "2023-02-29",
       like: 3,
     },
@@ -28,14 +37,63 @@ const DictionaryPage = () => {
       description:
         "주로 다른 사람의 말을 비아냥거릴 때 많이 쓰이는 신조어.'어쩌라고'와 '티비(텔레비전)'을 합친 합성어. 2021년 하반기경에 유명세를 탄 신조어다. 기원은 불분명하나, 여러 커뮤니티에서 다방면으로 쓰이고 있다.",
       author: "유진",
+      participants: 2,
+      date: "2023-02-29",
+      like: 3,
+    },
+    {
+      id: 4,
+      title: "어쩔티비4",
+      description:
+        "주로 다른 사람의 말을 비아냥거릴 때 많이 쓰이는 신조어.'어쩌라고'와 '티비(텔레비전)'을 합친 합성어. 2021년 하반기경에 유명세를 탄 신조어다. 기원은 불분명하나, 여러 커뮤니티에서 다방면으로 쓰이고 있다.",
+      author: "유진",
+      participants: 2,
+      date: "2023-02-29",
+      like: 3,
+    },
+    {
+      id: 5,
+      title: "어쩔티비5",
+      description:
+        "주로 다른 사람의 말을 비아냥거릴 때 많이 쓰이는 신조어.'어쩌라고'와 '티비(텔레비전)'을 합친 합성어. 2021년 하반기경에 유명세를 탄 신조어다. 기원은 불분명하나, 여러 커뮤니티에서 다방면으로 쓰이고 있다.",
+      author: "유진",
+      participants: 2,
+      date: "2023-02-29",
+      like: 3,
+    },
+    {
+      id: 6,
+      title: "어쩔티비6",
+      description:
+        "주로 다른 사람의 말을 비아냥거릴 때 많이 쓰이는 신조어.'어쩌라고'와 '티비(텔레비전)'을 합친 합성어. 2021년 하반기경에 유명세를 탄 신조어다. 기원은 불분명하나, 여러 커뮤니티에서 다방면으로 쓰이고 있다.",
+      author: "유진",
+      participants: 2,
+      date: "2023-02-29",
+      like: 3,
+    },
+    {
+      id: 7,
+      title: "어쩔티비7",
+      description:
+        "주로 다른 사람의 말을 비아냥거릴 때 많이 쓰이는 신조어.'어쩌라고'와 '티비(텔레비전)'을 합친 합성어. 2021년 하반기경에 유명세를 탄 신조어다. 기원은 불분명하나, 여러 커뮤니티에서 다방면으로 쓰이고 있다.",
+      author: "유진",
+      participants: 2,
       date: "2023-02-29",
       like: 3,
     },
   ];
-  return (
+
+  return location.pathname === "/dictionary/edit" ? (
     <>
       <div className="container">
-        <Nav />
+        <Nav hideCategory={true} />
+        <DictionaryItemEdit dict={dict} keyword={keyword} />
+      </div>
+    </>
+  ) : (
+    <>
+      <div className="container">
+        <Nav hideCategory={false} />
         <Dictionary dict={dict} />
       </div>
     </>
