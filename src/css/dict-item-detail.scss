@@ -1,0 +1,81 @@
+.detail-container {
+    height: 80vh;
+    box-sizing: border-box;
+    background-color: #F5F5F5;
+    margin: 15px;
+    padding: 20px 17px;
+    border-radius: 15px;
+
+    p {
+        margin: 0;
+        padding: 0;
+    }
+
+    .word-title {
+        display: inline-block;
+        font-size: larger;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .info {
+        display: flex;
+        align-items: center;
+        font-size: small;
+        margin-bottom: 20px;
+
+        .info-right {
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+
+            .report-icon {
+                width: 12px;
+                height: 12px;
+                padding-right: 5px;
+                cursor: pointer;
+            }
+
+            .share-icon {
+                width: 12px;
+                height: 12px;
+                padding-right: 3px;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .buttons-container {
+        max-width: 370px;
+        position: absolute;
+        bottom: 70px;
+        left: 0;
+        right: 0;
+        box-sizing: border-box;
+        margin: 0 auto;
+
+        .buttons-flex {
+            display: flex;
+            justify-content: space-evenly;
+            margin: 10px;
+
+            .like-btn,
+            .edit-btn {
+                width: 120px;
+                height: 35px;
+                border: solid 0.5px rgb(197, 197, 197);
+                border-radius: 10px;
+                background-color: white;
+                color: #3A668C;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: #3A668C;
+                    color: white;
+                    transition: 0.5s;
+                }
+            }
+        }
+
+    }
+}
