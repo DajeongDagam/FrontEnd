@@ -4,6 +4,7 @@ import MyPage from "./pages/MyPage";
 import LoginPage from "./pages/LoginPage";
 import { Route, Routes } from "react-router-dom";
 import React from "react";
+import Drawer from "./components/Drawer";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Route path="/login" element={<LoginPage />} />
       <Route path="/dictionary/edit" element={<DictionaryPage />} />
       <Route path="/dictionary/search" element={<DictionaryPage />} />
+      <Route path="/drawer" element={<Drawer />} />
     </Routes>
   );
 }

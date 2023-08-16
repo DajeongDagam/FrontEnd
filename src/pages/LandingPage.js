@@ -12,6 +12,11 @@ import dic_img from "../images/main-dic-img.png";
 
 const LandingPage = () => {
   const [innerHeight, setInnerHeight] = useState(window.innerHeight);
+  const [isOpen, setMenu] = useState(false); // 메뉴의 초기값을 false로 설정
+
+  const toggleMenu = () => {
+    setMenu((isOpen) => !isOpen); // on,off 개념 boolean
+  };
 
   useEffect(() => {
     const resizeListener = () => {
@@ -19,6 +24,7 @@ const LandingPage = () => {
     };
     window.addEventListener("resize", resizeListener);
   });
+
   console.log("innerHeight : " + innerHeight);
   console.log("innerHeight-30 : " + innerHeight - 30);
   console.log("innerHeight : " + innerHeight * 4);
@@ -31,9 +37,20 @@ const LandingPage = () => {
             <img src={text_logo} alt="logo" className="text-logo" />
           </div>
           <div className="draw-btn-container">
-            <img src={drawbar_btn} alt="drawer btn" className="drawbar-btn" />
+            <button onClick={() => toggleMenu()}>
+              <img src={drawbar_btn} alt="drawer btn" className="drawbar-btn" />
+            </button>
           </div>
         </div>
+        <div className="side-bar">
+          <ul className={isOpen ? "show-menu" : "hide-menu"}>
+            <li>다가감 프로젝트 소개</li>
+            <li>다가감 사전</li>
+            <li>로그인</li>
+            <li>회원가입</li>
+          </ul>
+        </div>
+
         <div className="landing-content-container">
           <Swiper
             direction={"vertical"}
