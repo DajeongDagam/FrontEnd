@@ -91,7 +91,7 @@ const DictionaryPage = () => {
   const search = (keyword) => {
     navigate({
       pathname: "/dictionary/search",
-      search: `?word=${keyword}`,
+      search: `?keyword=${keyword}`,
     });
 
     // 검색 API 사용해서 결과 얻어오기

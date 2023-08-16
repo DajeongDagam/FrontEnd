@@ -1,17 +1,17 @@
 import React from "react";
 import DictionaryItem from "./DictionaryItem";
-import { useSearchParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import DictionaryItemDetail from "./DictionaryItemDetail";
 
 const Dictionary = ({ dict }) => {
-  const [searchParams] = useSearchParams();
-  const query = searchParams.get("keyword");
+  const { id } = useParams();
 
-  return query === null ? (
+  return id === undefined ? (
     <div>
       {dict.map((word) => (
         <DictionaryItem
           key={word.id}
+          id={word.id}
           title={word.title}
           description={word.description}
           date={word.date}
@@ -21,7 +21,7 @@ const Dictionary = ({ dict }) => {
       ))}
     </div>
   ) : (
-    <DictionaryItemDetail dict={dict} keyword={query} />
+    <DictionaryItemDetail dict={dict} id={id} />
   );
 };
 
