@@ -1,44 +1,44 @@
 .profile-container {
-    background-color: #E3F0FF;
-    margin: 20px 30px;
-    border-radius: 20px;
-    padding: 20px;
+  background-color: #e3f0ff;
+  margin: 90px 30px 20px 30px;
+  border-radius: 20px;
+  padding: 20px;
 
-    .nickname {
-        font-size: 20px;
-        font-weight: bold;
-        margin-right: 7px;
-    }
+  .nickname {
+    font-size: 20px;
+    font-weight: bold;
+    margin-right: 7px;
+  }
 
-    .edit-btn {
-        width: 15px;
-        height: 15px;
-        cursor: pointer;
-    }
+  .edit-btn {
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+  }
 
-    p {
-        margin: 0;
-        margin-top: 10px;
-    }
+  p {
+    margin: 0;
+    margin-top: 10px;
+  }
 }
 
 .menu-container {
-    margin: 0 30px 20px 30px;
-    padding: 10px;
+  margin: 0 30px 20px 30px;
+  padding: 10px;
 
-    .menu-item {
-        display: flex;
-        align-items: center;
-        cursor: pointer;
+  .menu-item {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
 
-        .menu-item-icon {
-            width: 30px;
-            height: 30px;
-            margin-right: 10px;
-        }
-
-        p {
-            width: 100%;
-        }
+    .menu-item-icon {
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
     }
+
+    p {
+      width: 100%;
+    }
+  }
 }

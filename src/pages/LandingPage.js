@@ -152,6 +152,16 @@ const LandingPage = ({ location }) => {
                 </Link>
               </div>
             </SwiperSlide>
+            {/* <SwiperSlide>
+              <div>
+                <ul className={isOpen ? "show-menu" : "hide-menu"}>
+                  <li>다가감 프로젝트 소개</li>
+                  <li>다가감 사전</li>
+                  <li>로그인</li>
+                  <li>회원가입</li>
+                </ul>
+              </div>
+            </SwiperSlide> */}
           </Swiper>
         </div>
       </div>
