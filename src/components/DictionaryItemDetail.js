@@ -4,8 +4,8 @@ import shareIcon from "../images/share-icon.png";
 import "../css/dict-item-detail.scss";
 import { useNavigate } from "react-router-dom";
 
-const DictionaryItemDetail = ({ dict, keyword }) => {
-  const word = dict.filter((word) => word.title === keyword);
+const DictionaryItemDetail = ({ dict, id, setWordId }) => {
+  const word = dict.filter((word) => word.id === parseInt(id));
   const navigate = useNavigate();
 
   const onClickLikeBtn = () => {
@@ -13,9 +13,9 @@ const DictionaryItemDetail = ({ dict, keyword }) => {
   };
 
   const onClickEditBtn = () => {
+    setWordId(id);
     navigate({
-      pathname: "/dictionary/edit",
-      search: `?keyword=${word[0].title}`,
+      pathname: `/dictionary/${id}/edit`,
     });
   };
 
