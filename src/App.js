@@ -16,6 +16,7 @@ function App() {
       <Route path="/dictionary/:id/edit" element={<DictionaryPage />} />
       <Route path="/dictionary/search" element={<DictionaryPage />} />
       <Route path="/dictionary/:id" element={<DictionaryPage />} />
+      <Route paht="/dictionary/new" element={<DictionaryPage />} />
     </Routes>
   );
 }
