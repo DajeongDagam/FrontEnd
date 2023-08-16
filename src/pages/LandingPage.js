@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "../css/container.scss";
 import "../css/landing-page.scss";
 import drawbar_btn from "../images/draw-btn.png";
@@ -10,7 +11,7 @@ import main_img from "../images/main-bg-img.png";
 import text_logo from "../images/text-logo.png";
 import dic_img from "../images/main-dic-img.png";
 
-const LandingPage = () => {
+const LandingPage = ({ location }) => {
   const [innerHeight, setInnerHeight] = useState(window.innerHeight);
   const [isOpen, setMenu] = useState(false); // 메뉴의 초기값을 false로 설정
 
@@ -33,23 +34,25 @@ const LandingPage = () => {
     <div className="background">
       <div className="container">
         <div className="top-bar-container">
-          <div className="title-container">
-            <img src={text_logo} alt="logo" className="text-logo" />
-          </div>
+          <Link to="/">
+            <div className="title-container">
+              <img src={text_logo} alt="logo" className="text-logo" />
+            </div>
+          </Link>
           <div className="draw-btn-container">
             <button onClick={() => toggleMenu()}>
               <img src={drawbar_btn} alt="drawer btn" className="drawbar-btn" />
             </button>
           </div>
         </div>
-        <div className="side-bar">
+        {/* <div className="side-bar">
           <ul className={isOpen ? "show-menu" : "hide-menu"}>
             <li>다가감 프로젝트 소개</li>
             <li>다가감 사전</li>
             <li>로그인</li>
             <li>회원가입</li>
           </ul>
-        </div>
+        </div> */}
 
         <div className="landing-content-container">
           <Swiper
@@ -136,9 +139,11 @@ const LandingPage = () => {
 
                   <img src={dic_img} alt="사전참여이미지" className="dic-img" />
                 </div>
-                <button className="go-btn" title="사전 참여하기">
-                  사전 참여하기
-                </button>
+                <Link to="/dictionary">
+                  <button className="go-btn" title="사전 참여하기">
+                    사전 참여하기
+                  </button>
+                </Link>
               </div>
             </SwiperSlide>
           </Swiper>
