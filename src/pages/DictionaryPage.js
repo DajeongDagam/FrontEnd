@@ -1,14 +1,20 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Nav from "../components/DictTopSearchNav";
 import Dictionary from "../components/Dictionary";
 import { useLocation } from "react-router-dom";
 import DictionaryItemEdit from "../components/DictionaryItemEdit";
 import { useNavigate } from "react-router-dom";
+import cn from "classnames";
+import "../css/dictionary-no-result.scss";
+import DictionaryItemRegister from "../components/DictionaryItemRegister";
 
 const DictionaryPage = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const [wordId, setWordId] = useState("");
+  const [showResult, setShowResult] = useState(true);
+  const [keyword, setKeyword] = useState();
+  const [hideCategory, setHideCategory] = useState(false);
 
   // dict -> 추후 API 처리할 파일로 옮기기
   const dict = [
@@ -90,15 +96,25 @@ const DictionaryPage = () => {
     // 검색 API 사용해서 결과 얻어오기
     const res = dict.filter((word) => word.title === keyword);
     setResult(res);
+    setKeyword(keyword);
 
-    if (res.isEmpty) {
+    if (res.length === 0) {
       // 검색 결과가 없을 시
+      setShowResult(false);
+      setHideCategory(true);
     } else {
       navigate({
         pathname: "/dictionary/search",
         search: `?keyword=${keyword}`,
       });
     }
+  };
+
+  const register = () => {
+    navigate({
+      pathname: "/dictionary/new",
+      search: `?keyword=${keyword}`,
+    });
   };
 
   return location.pathname.includes("edit") ? (
@@ -108,11 +124,27 @@ const DictionaryPage = () => {
         <DictionaryItemEdit dict={dict} wordId={wordId} />
       </div>
     </>
+  ) : location.pathname.includes("new") ? (
+    <>
+      <div className="container">
+        <Nav hideCategory={hideCategory} search={search} />
+        <DictionaryItemRegister keyword={keyword} />
+      </div>
+    </>
   ) : (
     <>
       <div className="container">
-        <Nav hideCategory={false} search={search} />
+        <Nav hideCategory={hideCategory} search={search} />
         <Dictionary dict={result} setWordId={setWordId} />
+        <div className={cn("no-result-container", { showResult })}>
+          <p>
+            <span>'{keyword}'</span> 검색 결과가 존재하지 않습니다.
+          </p>
+          <p>새로운 단어로 등록해주실래요?</p>
+          <button className="register-btn" onClick={register}>
+            단어 등록하러 가기
+          </button>
+        </div>
       </div>
     </>
   );
