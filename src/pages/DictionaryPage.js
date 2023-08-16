@@ -98,15 +98,15 @@ const DictionaryPage = () => {
     setResult(res);
     setKeyword(keyword);
 
+    navigate({
+      pathname: "/dictionary/search",
+      search: `?keyword=${keyword}`,
+    });
+
     if (res.length === 0) {
       // 검색 결과가 없을 시
       setShowResult(false);
       setHideCategory(true);
-    } else {
-      navigate({
-        pathname: "/dictionary/search",
-        search: `?keyword=${keyword}`,
-      });
     }
   };
 
