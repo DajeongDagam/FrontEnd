@@ -19,7 +19,9 @@ const LandingPage = () => {
     };
     window.addEventListener("resize", resizeListener);
   });
-  console.log(innerHeight);
+  console.log("innerHeight : " + innerHeight);
+  console.log("innerHeight-30 : " + innerHeight - 30);
+  console.log("innerHeight : " + innerHeight * 4);
 
   return (
     <div className="background">
