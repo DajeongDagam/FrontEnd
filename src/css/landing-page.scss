@@ -1,11 +1,17 @@
+*::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera*/
+}
+
 .landing-content-container {
-  margin: 0 auto;
+  margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  //   min-height: 94vh;
+  height: 100%;
+
+  // max-height: 100vh;
   flex-direction: column;
-  background-color: #d09035;
+  background-color: #fff;
 
   & h1 {
     text-align: center;
@@ -31,11 +37,17 @@
 }
 
 .slide1 {
-  height: 70vh;
+  background-color: #d09035;
+  height: 100%;
+}
+
+button {
+  border: none;
+  background-color: rgba(255, 255, 255, 0);
 }
 
 .main-img {
-  padding-left: 10%;
+  padding-left: 8%;
   padding-top: 40%;
   width: 400px;
 }
@@ -47,7 +59,7 @@
 
 .slide2 {
   background-color: #fff;
-  height: 100vh;
+  height: 100%;
 
   & h1 {
     padding-top: 40%;
@@ -66,18 +78,20 @@
 
 .slide3 {
   background-image: url("../images/main-bg-3.png");
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background-size: cover;
+  margin: 0;
   // background-repeat: no-repeat;
 
   & p {
     // height: 100vh;
-    // margin-bottom: 30px;
+    margin-bottom: 30px;
     margin-top: 0;
     margin-left: 30px;
     margin-right: 30px;
     padding-top: 520px;
-    // padding-bottom: 20px;
+    padding-bottom: 20px;
     font-size: 20px;
     color: #fff;
     font-weight: lighter;
@@ -88,7 +102,7 @@
 
 .slide4 {
   background-image: url("../images/main-bg-4.png");
-  height: 100vh;
+  height: 100%;
   justify-items: center;
   align-items: center;
   background-size: cover;
@@ -117,6 +131,7 @@
   }
 
   & .forth-text2 {
+    margin-top: 0;
     margin-left: 30px;
     margin-right: 30px;
     padding-bottom: 20px;
@@ -142,4 +157,27 @@
   color: #3a668c;
   font-size: 20px;
   font-weight: 600;
+}
+
+ul {
+  padding-top: 50%;
+  margin-bottom: auto;
+  list-style-type: none;
+  height: auto;
+  z-index: index;
+  width: 500px;
+  color: #ffffff;
+  font-size: 24px;
+  text-align: center;
+}
+
+.side-bar {
+  padding: 15px 30px 15px 0px;
+  max-width: 500px;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  position: fixed;
+  z-index: 2;
+  top: 2rem;
 }

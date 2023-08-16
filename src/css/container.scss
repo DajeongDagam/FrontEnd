@@ -1,4 +1,9 @@
 //앱 전체 화면 컨테이너
+// .background {
+//   background-color: #fff;
+//   z-index: 2;
+// }
+
 .container {
   max-width: 500px;
   margin: 0 auto;
@@ -14,21 +19,48 @@
 }
 
 .top-bar-container {
-  padding: 5% 5% 3% 5%;
+  max-width: 500px;
+  width: 100%;
+  margin: 0;
+  padding: 15px 30px 15px 10px;
   display: flex;
+  position: fixed;
   flex-direction: row;
   justify-content: space-between;
-
+  z-index: 3;
+  // background-color: #fff;
   // background-color: rgba(255, 255, 255, 0);
 }
 
 .drawbar-btn {
-  margin-top: 8px;
+  margin-top: 15px;
+  margin-right: 35px;
   width: 25px;
   height: 20px;
 }
 
 .text-logo {
-  margin-left: 10px;
+  margin-top: 10px;
+  margin-left: 20px;
   width: 100px;
+}
+
+.hide-menu {
+  appearance: none;
+  margin-top: 28px;
+  margin: 0 auto;
+  height: 100%;
+  position: fixed;
+  transition: 1s;
+  opacity: 0;
+}
+
+.show-menu {
+  background-color: #305474;
+  width: 460px;
+  margin: 0 auto;
+  margin-top: 28px;
+  height: 100%;
+  position: fixed;
+  transition: 1s;
 }

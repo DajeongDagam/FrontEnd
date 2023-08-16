@@ -4,6 +4,7 @@ import MyPage from "./pages/MyPage";
 import LoginPage from "./pages/LoginPage";
 import { Route, Routes } from "react-router-dom";
 import React from "react";
+import Drawer from "./components/Drawer";
 
 function App() {
   return (
