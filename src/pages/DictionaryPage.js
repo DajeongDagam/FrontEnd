@@ -1,15 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import Nav from "../components/DictTopSearchNav";
 import Dictionary from "../components/Dictionary";
 import { useLocation, useSearchParams } from "react-router-dom";
 import DictionaryItemEdit from "../components/DictionaryItemEdit";
+import { useNavigate } from "react-router-dom";
 
 const DictionaryPage = () => {
   const location = useLocation();
+  const navigate = useNavigate();
 
   const [searchParams] = useSearchParams();
   const keyword = searchParams.get("keyword");
 
+  // dict -> 추후 API 처리할 파일로 옮기기
   const dict = [
     {
       id: 1,
@@ -83,6 +86,19 @@ const DictionaryPage = () => {
     },
   ];
 
+  const [result, setResult] = useState(dict);
+
+  const search = (keyword) => {
+    navigate({
+      pathname: "/dictionary/search",
+      search: `?word=${keyword}`,
+    });
+
+    // 검색 API 사용해서 결과 얻어오기
+    const res = dict.filter((word) => word.title === keyword);
+    setResult(res);
+  };
+
   return location.pathname === "/dictionary/edit" ? (
     <>
       <div className="container">
@@ -93,8 +109,8 @@ const DictionaryPage = () => {
   ) : (
     <>
       <div className="container">
-        <Nav hideCategory={false} />
-        <Dictionary dict={dict} />
+        <Nav hideCategory={false} search={search} />
+        <Dictionary dict={result} />
       </div>
     </>
   );
