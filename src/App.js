@@ -15,7 +15,6 @@ function App() {
       <Route path="/login" element={<LoginPage />} />
       <Route path="/dictionary/edit" element={<DictionaryPage />} />
       <Route path="/dictionary/search" element={<DictionaryPage />} />
-      {/* <Route path="/drawer" element={<Drawer />} /> */}
     </Routes>
   );
 }
