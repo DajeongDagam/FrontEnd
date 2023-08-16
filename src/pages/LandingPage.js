@@ -6,10 +6,14 @@ import drawbar_btn from "../images/draw-btn.png";
 import arrow_img_wh from "../images/down-arrow-img-wh.png";
 import arrow_img from "../images/down-arrow-img.png";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Mousewheel, Pagination, Navigation } from "swiper/modules";
+import { EffectFade, Mousewheel, Pagination, Navigation } from "swiper/modules";
 import main_img from "../images/main-bg-img.png";
 import text_logo from "../images/text-logo.png";
 import dic_img from "../images/main-dic-img.png";
+import "swiper/css";
+import "swiper/css/effect-fade";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 const LandingPage = ({ location }) => {
   const [innerHeight, setInnerHeight] = useState(window.innerHeight);
@@ -58,7 +62,7 @@ const LandingPage = ({ location }) => {
           <Swiper
             direction={"vertical"}
             slidesPerView={1}
-            spaceBetween={0}
+            spaceBetween={10}
             mousewheel={true}
             navigation={true}
             pagination={{
@@ -66,9 +70,11 @@ const LandingPage = ({ location }) => {
               type: "bullets",
               clickable: true,
             }}
-            modules={[Mousewheel, Pagination, Navigation]}
+            modules={[Mousewheel, Pagination, Navigation, EffectFade]}
             className="mySwiper"
             height={innerHeight}
+            effect={"fade"}
+            onDurationChange={30}
           >
             <SwiperSlide>
               <div className="slide1">
