@@ -1,16 +1,23 @@
 import React from "react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../css/dict-item-edit.scss";
 
-const DictionaryItemEdit = ({ dict, keyword }) => {
-  const word = dict.filter((word) => word.title === keyword);
+const DictionaryItemEdit = ({ dict, wordId }) => {
+  const word = dict.filter((word) => word.id === parseInt(wordId));
   const [desc, setDesc] = useState(word[0].description);
+
+  const navigate = useNavigate();
 
   const onClickBtn = (e) => {
     // 수정 요청
     console.log("제출하기 버튼 클릭");
     console.log(desc);
     e.preventDefault();
+
+    navigate({
+      pathname: `/dictionary/${wordId}`,
+    });
   };
 
   const onChange = (e) => {

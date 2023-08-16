@@ -12,7 +12,7 @@ function App() {
       <Route path="/dictionary" element={<DictionaryPage />} />
       <Route path="/mypage" element={<MyPage />} />
       <Route path="/login" element={<LoginPage />} />
-      <Route path="/dictionary/edit" element={<DictionaryPage />} />
+      <Route path="/dictionary/:id/edit" element={<DictionaryPage />} />
       <Route path="/dictionary/search" element={<DictionaryPage />} />
       <Route path="/dictionary/:id" element={<DictionaryPage />} />
     </Routes>

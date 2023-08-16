@@ -1,16 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Nav from "../components/DictTopSearchNav";
 import Dictionary from "../components/Dictionary";
-import { useLocation, useSearchParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import DictionaryItemEdit from "../components/DictionaryItemEdit";
 import { useNavigate } from "react-router-dom";
 
 const DictionaryPage = () => {
   const location = useLocation();
   const navigate = useNavigate();
-
-  const [searchParams] = useSearchParams();
-  const keyword = searchParams.get("keyword");
+  const [wordId, setWordId] = useState("");
 
   // dict -> 추후 API 처리할 파일로 옮기기
   const dict = [
@@ -89,28 +87,32 @@ const DictionaryPage = () => {
   const [result, setResult] = useState(dict);
 
   const search = (keyword) => {
-    navigate({
-      pathname: "/dictionary/search",
-      search: `?keyword=${keyword}`,
-    });
-
     // 검색 API 사용해서 결과 얻어오기
     const res = dict.filter((word) => word.title === keyword);
     setResult(res);
+
+    if (res.isEmpty) {
+      // 검색 결과가 없을 시
+    } else {
+      navigate({
+        pathname: "/dictionary/search",
+        search: `?keyword=${keyword}`,
+      });
+    }
   };
 
-  return location.pathname === "/dictionary/edit" ? (
+  return location.pathname.includes("edit") ? (
     <>
       <div className="container">
         <Nav hideCategory={true} />
-        <DictionaryItemEdit dict={dict} keyword={keyword} />
+        <DictionaryItemEdit dict={dict} wordId={wordId} />
       </div>
     </>
   ) : (
     <>
       <div className="container">
         <Nav hideCategory={false} search={search} />
-        <Dictionary dict={result} />
+        <Dictionary dict={result} setWordId={setWordId} />
       </div>
     </>
   );

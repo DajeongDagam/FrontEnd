@@ -3,7 +3,7 @@ import DictionaryItem from "./DictionaryItem";
 import { useParams } from "react-router-dom";
 import DictionaryItemDetail from "./DictionaryItemDetail";
 
-const Dictionary = ({ dict }) => {
+const Dictionary = ({ dict, setWordId }) => {
   const { id } = useParams();
 
   return id === undefined ? (
@@ -21,7 +21,7 @@ const Dictionary = ({ dict }) => {
       ))}
     </div>
   ) : (
-    <DictionaryItemDetail dict={dict} id={id} />
+    <DictionaryItemDetail dict={dict} id={id} setWordId={setWordId} />
   );
 };
 
