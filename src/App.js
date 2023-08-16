@@ -2,6 +2,7 @@ import LandingPage from "./pages/LandingPage";
 import DictionaryPage from "./pages/DictionaryPage";
 import MyPage from "./pages/MyPage";
 import LoginPage from "./pages/LoginPage";
+import RegisterPage from "./pages/RegisterPage";
 import { Route, Routes } from "react-router-dom";
 import React from "react";
 import Drawer from "./components/Drawer";
@@ -16,7 +17,8 @@ function App() {
       <Route path="/dictionary/:id/edit" element={<DictionaryPage />} />
       <Route path="/dictionary/search" element={<DictionaryPage />} />
       <Route path="/dictionary/:id" element={<DictionaryPage />} />
-      <Route paht="/dictionary/new" element={<DictionaryPage />} />
+      <Route path="/dictionary/new" element={<DictionaryPage />} />
+      <Route path="/register" element={<RegisterPage />} />
     </Routes>
   );
 }
