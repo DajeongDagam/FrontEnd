@@ -37,8 +37,11 @@
 }
 
 .slide1 {
-  background-color: #d09035;
+  background-image: url("../images/main-bg-1.png");
+  // background-color: #d09035;
   height: 100%;
+  width: 100%;
+  background-size: cover;
 }
 
 button {
@@ -108,10 +111,10 @@ button {
   background-size: cover;
 
   & .forth-text1 {
-    margin-top: 0;
-    margin-left: 30px;
-    margin-right: 30px;
-    padding-top: 200px;
+    margin: 0 3rem 0 3rem;
+    // margin-left: 3rem;
+    // margin-right: 30px;
+    padding-top: 10rem;
     font-size: 20px;
     color: #fff;
     text-align: center;
@@ -125,9 +128,9 @@ button {
     margin: 2rem;
     border-radius: 15px;
     background-color: #ebebeb;
-    padding-top: 10px;
-    padding-bottom: 20px;
-    margin-top: 6rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    margin-top: 4rem;
   }
 
   & .forth-text2 {

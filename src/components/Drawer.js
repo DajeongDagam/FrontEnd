@@ -13,7 +13,7 @@ const Drawer = () => {
         <li>
           <button onClick={() => toggleMenu()}></button>
         </li>{" "}
-        // 클릭되었을 때 준비한 함수 호출! on off 개념
+        {/* // 클릭되었을 때 준비한 함수 호출! on off 개념 */}
       </ul>
       <ul className={isOpen ? "show-menu" : "hide-menu"}>
         <li>다가감 프로젝트 소개</li>

@@ -20,7 +20,12 @@ const MyPage = () => {
       </div>
       <div className="profile-container">
         <span className="nickname">닉네임</span>
-        <img src={editBtn} alt="닉네임 수정 버튼" className="edit-btn" />
+        <img
+          src={editBtn}
+          alt="닉네임 수정 버튼"
+          className="edit-btn"
+          onClick={onEditBtnClick}
+        />
         <p>총 0개의 단어 사전에 참여하셨습니다!</p>
       </div>
       <div className="menu-container">
