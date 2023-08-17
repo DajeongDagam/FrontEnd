@@ -137,6 +137,7 @@ const LandingPage = ({ location }) => {
                   디지털 격차를 해소하는 데{"\n"}
                   동참해주시겠어요?
                 </p>
+
                 <div className="landing-info-container">
                   <p className="forth-text2">
                     참여해주신 사전은 팝업 사전 어플을 다운받아 사용할 수
