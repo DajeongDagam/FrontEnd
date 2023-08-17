@@ -20,7 +20,7 @@ const LandingPage = ({ location }) => {
   const [isOpen, setMenu] = useState(false); // 메뉴의 초기값을 false로 설정
 
   const toggleMenu = () => {
-    setMenu((isOpen) => !isOpen); // on,off 개념 boolean
+    setMenu(!isOpen); // on,off 개념 boolean
   };
 
   useEffect(() => {
