@@ -5,7 +5,7 @@ import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import { Route, Routes } from "react-router-dom";
 import React from "react";
-import Drawer from "./components/Drawer";
+// import Drawer from "./components/Drawer";
 
 function App() {
   return (
