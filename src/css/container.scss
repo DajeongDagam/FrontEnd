@@ -8,9 +8,6 @@
   max-width: 500px;
   margin: 0 auto;
   min-height: 100vh;
-
-  //화면 영역 확인을 위한 배경색
-  background-color: antiquewhite;
   display: flex;
   flex-direction: column;
 
@@ -33,14 +30,14 @@
 }
 
 .drawbar-btn {
-  margin-top: 15px;
+  margin-top: 2rem;
   margin-right: 35px;
   width: 25px;
   height: 20px;
 }
 
 .text-logo {
-  margin-top: 10px;
+  margin-top: 1.5rem;
   margin-left: 20px;
   width: 100px;
 }
