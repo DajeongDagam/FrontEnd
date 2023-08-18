@@ -3,6 +3,7 @@ import DictionaryPage from "./pages/DictionaryPage";
 import MyPage from "./pages/MyPage";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
+import Test from "./pages/Test";
 import { Route, Routes } from "react-router-dom";
 import React from "react";
 // import Drawer from "./components/Drawer";
@@ -19,6 +20,7 @@ function App() {
       <Route path="/dictionary/:id" element={<DictionaryPage />} />
       <Route path="/dictionary/new" element={<DictionaryPage />} />
       <Route path="/register" element={<RegisterPage />} />
+      <Route path="/test" element={<Test />} />
     </Routes>
   );
 }

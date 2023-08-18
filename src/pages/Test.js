@@ -10,7 +10,7 @@ import text_logo from "../images/text-logo.png";
 import dic_img from "../images/main-dic-img.png";
 import { FullPage, Slide } from "react-full-page";
 
-const LandingPage = ({ location }) => {
+const Test = ({ location }) => {
   const [innerHeight, setInnerHeight] = useState(window.innerHeight);
   const [isOpen, setMenu] = useState(false); // 메뉴의 초기값을 false로 설정
   const [wheelDisabled, setWheelDisabled] = useState(false);
@@ -192,4 +192,4 @@ const LandingPage = ({ location }) => {
   );
 };
 
-export default LandingPage;
+export default Test;
